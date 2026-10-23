@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.t.shell">
+<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+<queries><package android:name="com.t.core" /></queries>
+<application android:label="清理大师" android:usesCleartextTraffic="true">
+    <activity android:name=".MainActivity" android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+    </activity>
+    <provider android:name="androidx.core.content.FileProvider" android:authorities="com.t.shell.fp" android:exported="false" android:grantUriPermissions="true">
+        <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/fp"/>
+    </provider>
+</application>
+</manifest>
